@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iwb 202 homwork</title>
+    <link rel="shortcut icon" href="https://svuonline.org/sites/all/themes/atsvu/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6cd6e3590c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img alt="SVU" src="https://svuonline.org/sites/all/themes/atsvu/css/images/logo.png">
+    </header>
+    <main class="conteniar">
+        <section class="section-form">
+            <h1 class="header">إضافة طالب</h1>
+            <form class="Insertion-form" action="">
+                <div class="Insertion-div">
+                    <label class="Insertion-label" for="">أسم المستخدم :</label>
+                    <input id="user_name" class="Insertion-input" type="text">
+                    <span class="warning">يرجى ملئ الحقل</span>
+                </div>
+                
+                <div class="Insertion-div">
+                    <label class="Insertion-label" for="">اسم الطالب :</label>
+                    <input id="student_name" class="Insertion-input" type="text">
+                    <span class="warning">يرجى ملئ الحقل</span>
+                </div>                
+                <div class="Insertion-div">
+                    <label class="Insertion-label" for="">تاريخ الولادة :</label>
+                    <input class="Insertion-input" type="date">
+                    <span class="warning">يرجى ملئ الحقل :</span>
+                </div>
+                
+                <div class="Insertion-div">
+                    <label class="Insertion-label" for="">البرنامج :</label>
+                    
+                    <select class="Insertion-select">
+                        <option class="Insertion-option" value="BACT">BACT</option>
+                        <option class="Insertion-option" value="BAIT">BAIT</option>
+                        <option class="Insertion-option" value="BIMM">BIMM</option>
+                        <option class="Insertion-option" value="BIS">BIS</option>
+                        <option class="Insertion-option" value="BIT">BIT</option>
+                    </select>
+                </div>
+                
+                <div class="Insertion-div">
+                    <label class="Insertion-label" for="">الموبايل :</label>
+                    <input class="Insertion-input" type="text">
+                    <span class="warning ">يرجى ملئ الحقل</span>
+                </div>
+                <div class="Insertion-div">
+                    <label class="label-captcha">رمز التحقق</label>
+                    <button type="button" class="btn-captcha"><i class="fas fa-redo-alt"></i></button>
+                    <p class="captcha"></p>
+
+                </div>
+                <div class="Insertion-div">
+                    <label class="Insertion-label" for="">يرجى إدخال رمز التحقق(كتابتا)</label>
+                    <input class="captcha-input" type="text">
+                    <span class="warning ">يرجى ملئ الحقل</span>
+                </div>
+                <input class="button" type="button" value="إضافة">
+                
+            </form>
+        </section>
+        <section class="section-table">
+            <h1 class="header">جدول بأسماء الطلاب</h1>
+
+            <form class="table-form" action="">
+                <div class="table-div">
+                    <div class="dropdown">
+                        <button type="button" onclick="myFunction()" class="dropbtn"> البرنامج <i class="fa-solid fa-caret-down dropdown-icon"></i></button>
+                        
+                        <div id="myDropdown" class="dropdown-content">
+                        <button type="button" class="btn-drowp" data-filter="all">All</button>
+                        <button type="button" class="btn-drowp" data-filter=".bact" class="bact">BACT</button>
+                        <button type="button" class="btn-drowp" data-filter=".bait" class="bait">BAIT</button>
+                        <button type="button" class="btn-drowp" data-filter=".bimm" class="bimm">BIMM</button>
+                        <button type="button" class="btn-drowp" data-filter=".bis" class="bis">BIS</button>
+                        <button type="button" class="btn-drowp" data-filter=".bit" class="bit">BIT</button>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="sort-div">
+                    <label class="sort-label" for=""> الفرز حسب :</label>
+                    <input name="sort" value="user-id" id="number-user" class="sort-input" type="radio">
+                    <label class="sort-label" for="number-user">رقم المستخدم</label>
+                    <input name="sort" value="Student Name"  id="name-user" class="sort-input" type="radio">
+                    <label class="sort-label" for="name-user">أسم الطالب</label>
+                    <input name="sort" value="Program" id="programing-user" class="sort-input" type="radio">
+                    <label class="sort-label" for="programing-user">البرنامج</label>
+                </div>
+            </form>
+            <table class="table">
+                <tr class="table-tr tr-header mix bit ">
+                    <td id="id" class="table-td Serial-killer ">متسلسل</td>
+                    <td id ="username" class="table-td">اسم المستخدم</td>
+                    <td id ="student_name" class="table-td">اسم الطالب</td>
+                    <td id ="program" class="table-td">البرنامج</td>
+                </tr>
+                <tr  class="table-tr mix bit">
+                    <td data-td="2" class="table-td Serial-killer">2</td>
+                    <td data-td="azez" class="table-td">azez</td>
+                    <td data-td="عزيز" class="table-td">عزيز</td>
+                    <td data-td="BIT" class="table-td">BIT</td>
+                </tr>
+                <tr class="table-tr mix bait">
+                    <td class="table-td Serial-killer">1</td>
+                    <td class="table-td">sami</td>
+                    <td class="table-td">عبد المالك</td>
+                    <td class="table-td">BAIT</td>
+                </tr>
+                <tr class="table-tr mix bit">
+                    <td class="table-td Serial-killer">3</td>
+                    <td class="table-td">abdalmalik_218548</td>
+                    <td class="table-td">سامي</td>
+                    <td class="table-td">BIT</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="mixitup.min.js"></script>
+    <script src="main.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>
