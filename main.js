@@ -1,3 +1,4 @@
+
 // captcha
 const captcha = document.querySelector(".captcha"),
 reloadBtn = document.querySelector(".btn-captcha"),
@@ -32,7 +33,7 @@ inputField.addEventListener("focusout", function(){
         captcha.style.border = "1px solid red";
     }
 })
-// ////////////////////////
+// /////////// التحقق من الإدخال/////////////
 let allInsertionInputs = document.querySelectorAll(".Insertion-input");
 allInsertionInputs.forEach(insertion => {
     insertion.addEventListener("click",function (){
@@ -70,6 +71,7 @@ let serial = 3;
 function addUser() {
     ++serial;
     const tr = document.createElement("tr");
+    tr.classList.add("table-tr-mix");
     tr.classList.add("table-tr");
     tr.classList.add("mix");
     // td serial
@@ -120,10 +122,10 @@ phoneNumber.addEventListener("input",(e) => {
     })
     
     
-// ///////////////
+// /////// فرز حسب البرنامج////////
 let mixerTable = mixitup(".table", {
     selectors: {
-        target: ".table-tr"
+        target: ".table-tr-mix"
     },
     animation: {
         duration: 300
@@ -143,7 +145,6 @@ window.onclick = function(event) {
         if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
     document.querySelector(".dropdown-icon").classList.remove("down");
-
         }
     }
     }
@@ -192,8 +193,8 @@ function sortTable(g) {
         switching = true;
     }
     }
-    console.log(table.rows);
-    console.log(rows);
 }
 // /////////////////////////////
+
+
 
