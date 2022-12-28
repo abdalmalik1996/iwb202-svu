@@ -33,12 +33,13 @@ inputField.addEventListener("focusout", function(){
     }
 })
 // ////////////////////////
-let allInsertionInputs = document.querySelectorAll("input[type=text]");
+let allInsertionInputs = document.querySelectorAll(".Insertion-input");
 allInsertionInputs.forEach(insertion => {
     insertion.addEventListener("click",function (){
-        insertion.style.borderImageSource = "linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)";
+        insertion.style.borderImageSource = "linear-gradient(to right ,#005a82, #0088b4)";
         insertion.style.borderWidth ="1px";
-        insertion.style.borderImageSlice = 1;
+        insertion.style.borderImageSlice = 2;
+        insertion.nextElementSibling.classList.remove("warn");
     })
     insertion.addEventListener("focusout" , function () {
         if (insertion.value === "") {
@@ -56,7 +57,12 @@ document.querySelector(".button").addEventListener("click", function () {
     const hasEmptyString = inputs.map((inp) => inp.value).includes('');
         if (!hasEmptyString  && !document.querySelector(".warn")){
             addUser();
-        } 
+        } else {
+            allInsertionInputs.forEach(insertion => {
+                insertion.style.border ="1px red solid";
+            insertion.nextElementSibling.classList.add("warn");
+            });
+        }
     
 })
 
@@ -102,8 +108,6 @@ const phoneNumber = document.querySelector("#insertion-mobile");
 
 phoneNumber.addEventListener("input",(e) => {
     const   phonevalue =phoneNumber.value;
-    console.log(phonevalue);
-    console.log(phoneNumber);
     if (phonevalue[0] === "+" && phonevalue[1] ==="9" &&  phonevalue[2] === "6" &&phonevalue[3] === "3" ){
         phoneNumber.setAttribute('maxLength',13);
     }else {
@@ -113,8 +117,8 @@ phoneNumber.addEventListener("input",(e) => {
     .replace(/[^\dA-Z]/g, '+')
     .replace(/(.{4})/g, '$1')
     .trim();
-    validateForm(e.target);
     })
+    
     
 // ///////////////
 let mixerTable = mixitup(".table", {
@@ -188,5 +192,8 @@ function sortTable(g) {
         switching = true;
     }
     }
+    console.log(table.rows);
+    console.log(rows);
 }
 // /////////////////////////////
+
