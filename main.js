@@ -96,6 +96,26 @@ function addUser() {
     removeContent();
     getCaptcha();
 }
+//////////////
+const phoneNumber = document.querySelector("#insertion-mobile");
+
+
+phoneNumber.addEventListener("input",(e) => {
+    const   phonevalue =phoneNumber.value;
+    console.log(phonevalue);
+    console.log(phoneNumber);
+    if (phonevalue[0] === "+" && phonevalue[1] ==="9" &&  phonevalue[2] === "6" &&phonevalue[3] === "3" ){
+        phoneNumber.setAttribute('maxLength',13);
+    }else {
+        phoneNumber.setAttribute('maxLength',10);
+    }
+    e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, '+')
+    .replace(/(.{4})/g, '$1')
+    .trim();
+    validateForm(e.target);
+    })
+    
 // ///////////////
 let mixerTable = mixitup(".table", {
     selectors: {
