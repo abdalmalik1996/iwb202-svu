@@ -3,17 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    height: 100%;
+}
 body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
     background-color: #d3eaf3;
 }
 header{
     text-align: center;
 }
+img{
+    width: 200px;
+}
 footer{
-    height: 50px;
-    width: 100%;
     background-color: #005a82;
-    margin-top: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
 }
 .conteniar{
     display: grid;
@@ -288,7 +300,7 @@ select:focus-visible
     font-size: 18px;
 }
 .label-captcha{
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 0px;
     padding: 5px 0;
 }
@@ -325,7 +337,7 @@ select:focus-visible
         width: 200px;
     }
     .captcha{
-        width:150px ;
+        width:120px ;
         font-size: 18px;
     }
     .dropbtn{
@@ -341,8 +353,8 @@ select:focus-visible
         width: 150px;
     }
     .table-td{
-        padding: 2px 2px;
-        font-size: 18px;
+        padding: 0;
+        font-size: 14px;
     }
 }
 /*  */

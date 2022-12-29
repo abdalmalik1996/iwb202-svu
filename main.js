@@ -7,7 +7,6 @@ inputField = document.querySelector(".captcha-input");
 let allCharacters = ['a', 'b', 'c', 'd',
                     'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
                     't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
 function getCaptcha(){
 for (let i = 0; i < 6; i++) { 
     let randomCharacter = allCharacters[Math.floor(Math.random() * allCharacters.length)];
@@ -66,7 +65,7 @@ document.querySelector(".button").addEventListener("click", function () {
         }
     
 })
-//--------add user --------------//// 
+//--------إضافة طالب --------------//// 
 let serial = 3;
 function addUser() {
     ++serial;
@@ -105,7 +104,7 @@ function addUser() {
     getCaptcha();
     mix();
 }
-//////////////
+////// الموبايل////////
 const phoneNumber = document.querySelector("#insertion-mobile");
 
 
@@ -123,7 +122,6 @@ phoneNumber.addEventListener("input",(e) => {
     })
     
     
-// /////// فرز حسب البرنامج////////
 
 // /////dropdown//////
 function myFunction() {
@@ -189,15 +187,7 @@ function sortTable(g) {
     }
     }
 }
-// /////////////////////////////
-// let mixerTable = mixitup(".table", {
-//     selectors: {
-//         target: ".table-tr-mix"
-//     },
-//     animation: {
-//         duration: 300
-//     }
-// });
+//==== فرز البرنامج === /// 
 document.querySelectorAll(".btn-drowp").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector(".dropbtn-span").innerText = btn.getAttribute("data-filter").toUpperCase()
@@ -212,8 +202,7 @@ document.querySelectorAll(".btn-drowp").forEach(btn => {
         })
     })
 })
-
-// 
+//====  فرز البرنامج بعد الإضافة====/// 
 function mix(){
     document.querySelectorAll(".btn-drowp").forEach(btn => {
             document.querySelector(".dropbtn-span").innerText = btn.getAttribute("data-filter").toUpperCase()
