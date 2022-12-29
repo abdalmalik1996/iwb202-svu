@@ -74,15 +74,16 @@
             <form class="table-form" action="">
                 <div class="table-div">
                     <div class="dropdown">
-                        <button type="button" onclick="myFunction()" class="dropbtn"> البرنامج <i class="fa-solid fa-caret-down dropdown-icon"></i></button>
+                        <button type="button" onclick="myFunction()" class="dropbtn"> <span class="dropbtn-span">البرنامج</span> 
+                            <i class="fa-solid fa-caret-down dropdown-icon"></i></button>
                         
                         <div id="myDropdown" class="dropdown-content">
                         <button type="button" class="btn-drowp" data-filter="all">All</button>
-                        <button type="button" class="btn-drowp" data-filter=".bact" class="bact">BACT</button>
-                        <button type="button" class="btn-drowp" data-filter=".bait" class="bait">BAIT</button>
-                        <button type="button" class="btn-drowp" data-filter=".bimm" class="bimm">BIMM</button>
-                        <button type="button" class="btn-drowp" data-filter=".bis" class="bis">BIS</button>
-                        <button type="button" class="btn-drowp" data-filter=".bit" class="bit">BIT</button>
+                        <button type="button" class="btn-drowp" data-filter="bact" class="bact">BACT</button>
+                        <button type="button" class="btn-drowp" data-filter="bait" class="bait">BAIT</button>
+                        <button type="button" class="btn-drowp" data-filter="bimm" class="bimm">BIMM</button>
+                        <button type="button" class="btn-drowp" data-filter="bis" class="bis">BIS</button>
+                        <button type="button" class="btn-drowp" data-filter="bit" class="bit">BIT</button>
                         
                         </div>
                     </div>
@@ -99,26 +100,26 @@
                 </div>
             </form>
             <table class="table">
-                <tr class="table-tr tr-header">
+                <tr data-program="all" class="table-tr tr-header">
                     <td id="id" class="table-td Serial-killer ">متسلسل</td>
                     <td id ="username" class="table-td">اسم المستخدم</td>
                     <td id ="student_name" class="table-td">اسم الطالب</td>
                     <td id ="program" class="table-td">البرنامج</td>
                 </tr>
                 
-                    <tr  class="table-tr-mix table-tr mix bit">
+                    <tr data-program="bit"  class="table-tr-mix table-tr ">
                         <td data-td="2" class="table-td Serial-killer">2</td>
                         <td data-td="azez" class="table-td">azez</td>
                         <td data-td="عزيز" class="table-td">عزيز</td>
                         <td data-td="BIT" class="table-td">BIT</td>
                     </tr>
-                    <tr class="table-tr-mix table-tr mix bait">
+                    <tr data-program="bait" class="table-tr-mix table-tr ">
                         <td class="table-td Serial-killer">1</td>
                         <td class="table-td">sami</td>
                         <td class="table-td">عبد المالك</td>
                         <td class="table-td">BAIT</td>
                     </tr>
-                    <tr class="table-tr-mix table-tr mix bit">
+                    <tr data-program="bit" class="table-tr-mix table-tr">
                         <td class="table-td Serial-killer">3</td>
                         <td class="table-td">abdalmalik_218548</td>
                         <td class="table-td">سامي</td>
@@ -130,7 +131,6 @@
         </section>
     </main>
     <footer></footer>
-    <script  src="mixitup.min.js"></script>
     <script  src="main.js"></script>
 </body>
 </html>

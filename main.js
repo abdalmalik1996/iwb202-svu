@@ -66,7 +66,7 @@ document.querySelector(".button").addEventListener("click", function () {
         }
     
 })
-
+//--------add user --------------//// 
 let serial = 3;
 function addUser() {
     ++serial;
@@ -95,7 +95,7 @@ function addUser() {
     tdprogram.classList.add("table-td");
     tdprogram.innerText = document.querySelector(".Insertion-select").value;
     console.log(tdprogram.innerText.toLowerCase());
-    tr.classList.add(`${tdprogram.innerText.toLowerCase()}`);
+    tr.setAttribute('data-program', `${tdprogram.innerText.toLowerCase()}`);
     tr.appendChild(tdprogram);
     // 
     console.log(tr);
@@ -103,6 +103,7 @@ function addUser() {
     document.querySelectorAll(".Insertion-input").forEach(Insertion => Insertion.value="");
     removeContent();
     getCaptcha();
+    mix();
 }
 //////////////
 const phoneNumber = document.querySelector("#insertion-mobile");
@@ -123,15 +124,8 @@ phoneNumber.addEventListener("input",(e) => {
     
     
 // /////// فرز حسب البرنامج////////
-let mixerTable = mixitup(".table", {
-    selectors: {
-        target: ".table-tr-mix"
-    },
-    animation: {
-        duration: 300
-    }
-});
-// ///////////
+
+// /////dropdown//////
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
     document.querySelector(".dropdown-icon").classList.toggle("down");
@@ -146,6 +140,7 @@ window.onclick = function(event) {
         openDropdown.classList.remove('show');
     document.querySelector(".dropdown-icon").classList.remove("down");
         }
+
     }
     }
 }
@@ -195,6 +190,43 @@ function sortTable(g) {
     }
 }
 // /////////////////////////////
+// let mixerTable = mixitup(".table", {
+//     selectors: {
+//         target: ".table-tr-mix"
+//     },
+//     animation: {
+//         duration: 300
+//     }
+// });
+document.querySelectorAll(".btn-drowp").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector(".dropbtn-span").innerText = btn.getAttribute("data-filter").toUpperCase()
+        document.querySelectorAll(".table-tr-mix").forEach(m => {
+            m.style.display = "none";
+            if (btn.getAttribute("data-filter") === m.getAttribute("data-program") ) {
+                m.style.display = "table-row";
+            };
+            if (btn.getAttribute("data-filter") === "all"){
+                m.style.display = "table-row";
+            }
+        })
+    })
+})
 
+// 
+function mix(){
+    document.querySelectorAll(".btn-drowp").forEach(btn => {
+            document.querySelector(".dropbtn-span").innerText = btn.getAttribute("data-filter").toUpperCase()
+            document.querySelectorAll(".table-tr-mix").forEach(m => {
+                m.style.display = "none";
+                if (btn.getAttribute("data-filter") === m.getAttribute("data-program") ) {
+                    m.style.display = "table-row";
+                };
+                if (btn.getAttribute("data-filter") === "all"){
+                    m.style.display = "table-row";
+                }
+            })
+    })
+};
 
 
