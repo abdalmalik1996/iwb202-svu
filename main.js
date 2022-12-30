@@ -51,16 +51,19 @@ allInsertionInputs.forEach(insertion => {
         }
     })
 })
+
 //click button 
 const inputs = [...allInsertionInputs];
 document.querySelector(".button").addEventListener("click", function () {
     const hasEmptyString = inputs.map((inp) => inp.value).includes('');
-        if (!hasEmptyString  && !document.querySelector(".warn")){
+        if (!hasEmptyString  && !document.querySelector(".warn") && document.querySelector(".captcha-input").value === document.querySelector(".captcha").innerText ){
             addUser();
         } else {
             allInsertionInputs.forEach(insertion => {
-                insertion.style.border ="1px red solid";
-            insertion.nextElementSibling.classList.add("warn");
+                if (insertion.value === "") {
+                    insertion.style.border ="1px red solid";
+                    insertion.nextElementSibling.classList.add("warn");
+                }
             });
         }
     
